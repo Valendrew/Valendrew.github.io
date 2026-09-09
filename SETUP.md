@@ -24,7 +24,7 @@ Run `python3 -m http.server 8000` here, then open http://localhost:8000/. Stop w
 
 Edit `index.html` for the introduction and project cards and `styles.css` for appearance.
 
-The single source of truth for CV content is the current LaTeX CV under `application-materials/portfolio/` in the parent workspace, as identified by its `index.md`. The website currently mirrors **portfolio CV v2** (`cv-v2.tex` and `v2/Andrea-Valente-CV.pdf`).
+The single source of truth for CV content is the current LaTeX CV under `application-materials/portfolio/` in the parent workspace, as identified by its `index.md`. The website currently mirrors **portfolio CV v3** (`cv-v3.tex` and `v3/Andrea-Valente-CV.pdf`).
 
 For each CV update, copy the canonical PDF unchanged to `assets/Andrea-Valente-CV.pdf` and mirror the canonical wording in `cv/index.html`. Never rebuild, redact, or maintain a separate PDF variant for this website. Make any requested CV changes in the canonical source first. Verify that the copied PDF has the same SHA-256 checksum as the source, and check the HTML against that version. Keep the homepage consistent with the current public CV's contact and location wording. Source archives and private career evidence do not belong here.
 

@@ -12,7 +12,7 @@
 </head>
 <body class="cv"><a class="skip" href="#main">Skip to content</a><nav class="toolbar links" aria-label="CV navigation">
 <a href="../">← Portfolio</a><a class="button" href="../assets/Andrea-Valente-CV.pdf" download>Download PDF</a><button class="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button></nav>
-<!-- Content mirrored from the current portfolio CV (cv-v2.tex). Update the canonical source first. -->
+<!-- Content mirrored from the current portfolio CV (cv-v3.tex). Update the canonical source first. -->
 <main id="main">
 <header>
 <h1>Andrea Valente</h1>
@@ -20,7 +20,7 @@
 </header>
 <section>
 <h2>Summary</h2>
-<p>AI Computer Vision Engineer working across model development, geometric vision and inference systems. Builds evaluation pipelines and practical tools that turn research findings into client decisions and operational R&D workflows.</p>
+<p>AI Computer Vision Engineer working across model development and evaluation. Builds data and training pipelines, designs experiments, and turns results into practical tools and clear technical recommendations.</p>
 </section>
 <section>
 <h2>Experience</h2>
@@ -28,18 +28,15 @@
 <p class="meta">Modena, Italy</p>
 <h4>AI Computer Vision Engineer</h4>
 <p class="meta">Apr 2024 – Present</p>
-<ul><li><strong>Package-seal inspection</strong> Became primary implementation owner of a Python analysis suite for a global packaging manufacturer, combining image segmentation, geometric measurements and force features.</li>
-<li>Designed thin-plate-spline defect synthesis and a tailored U-Net workflow, using source-aware splits and reflection augmentation to address scarce examples and misleading edge reflections.</li>
-<li>Built the cloud-integrated dashboard used by the sealing team on new samples as an operational R&D tool, with queued GPU tasks and failure inspection; supported client engineers with deployment and handover.</li>
-<li><strong>Efficient pose estimation</strong> Implemented Python training, inference, camera correction, evaluation and tracking for 6DoF head pose; comparisons supported joint selection of a 0.6 MB LCNet model versus a 2.4 MB reference, with equivalence within client-agreed rotation/translation thresholds.</li>
-<li>Integrated ONNX Runtime with WebGPU, graph capture and GPU preprocessing into a pre-production test application; profiled runtime behaviour and tested across high-, mid- and low-tier devices.</li>
-<li><strong>3D reconstruction</strong> Created the client's first quantitative reconstruction framework for a global luxury eyewear group, annotating and fitting 68 face scans to FLAME and defining region-specific mesh errors and eyewear-relevant measures.</li>
-<li>Designed the acquisition protocol and prepared a 48-subject, 7,608-take benchmark; findings on 3D within-take stability and 2D across-session reproducibility informed a joint client/team decision to prioritise more viable facial-measurement approaches.</li>
-<li><strong>Point-cloud geometry</strong> Developed Python RANSAC-based fitting and synthetic-data tools for smart-lighting point clouds; the package was evaluated on selected shapes through visual feedback.</li>
+<ul><li><strong>Industrial package analysis</strong> Became primary implementation owner of a Python analysis suite and designed and built its cloud-integrated dashboard, used by the team on new samples in operational R&amp;D; combined signal analysis, synthetic defect data, DNN segmentation models and geometric processing.</li>
+<li><strong>3D face reconstruction</strong> Led the technical investigation of monocular reconstruction for a global luxury group; built synthetic-data, training and evaluation workflows that exposed accuracy and repeatability limits and helped guide product-scope decisions.</li>
+<li><strong>Point-cloud fitting</strong> Developed a Python package using RANSAC-based geometric fitting for smart-lighting installations, with synthetic point-cloud generation tools configurable for noise, outliers and missing faces to support evaluation.</li>
+<li><strong>Head-pose estimation</strong> Developed data, training, evaluation and tracking pipelines for a compact 6DoF model for browser virtual try-on; built comparison tools to support model selection with the team and client.</li>
+<li><strong>Browser inference</strong> Implemented project-specific ONNX Runtime/WebGPU integration and benchmarking, profiled CPU/GPU execution, and tested a pre-production path across devices.</li>
 </ul>
 <h4>AI Computer Vision Engineer (Intern)</h4>
 <p class="meta">Sep 2023 – Mar 2024</p>
-<ul><li>Evaluated NeRF/MVS and deformable meshes against virtual try-on acquisition and computation constraints; generated approximately 60,000 synthetic face images and trained a shape-regression network, identifying scale ambiguity and synthetic-to-real limitations.</li>
+<ul><li>Completed an MSc thesis on 3D face reconstruction for virtual try-on; compared geometric reconstruction and deformable-mesh approaches, generated synthetic training data, and trained and evaluated a face-shape estimation network, investigating synthetic-to-real limitations.</li>
 </ul>
 <h3>Vaia Innovations</h3>
 <p class="meta">Remote, part-time</p>
