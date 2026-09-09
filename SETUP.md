@@ -1,0 +1,29 @@
+# Maintenance and publishing
+
+This directory is an independent Git repository. Run all commands from this directory, never from the parent career repository.
+
+Create the empty **public** repository `Valendrew/Valendrew.github.io` on GitHub (do not initialise it with a README, licence or .gitignore), then run:
+
+```bash
+cd "/home/valendrew/Projects/resume-portfolio/github-profile/portfolio"
+git remote add origin git@github.com:Valendrew/Valendrew.github.io.git
+git add .
+git commit -m "Add portfolio" 
+git push -u origin main
+```
+
+If a remote is already attached, inspect `git remote -v` and skip `remote add` when it is correct. Never replace the parent repository's remote. Later updates use `git add .`, `git commit`, and `git push` from this directory.
+
+In GitHub Settings → Pages, select **Deploy from a branch**, **main**, **/ (root)** and Save. The site will be available at https://valendrew.github.io/ after deployment completes. `.nojekyll` serves the HTML/CSS directly; no build step or custom Actions workflow is needed.
+
+## Local preview
+
+Run `python3 -m http.server 8000` here, then open http://localhost:8000/. Stop with Ctrl+C.
+
+## Content updates
+
+Edit `index.html` for the introduction and project cards, `styles.css` for appearance, and `cv/index.html` for CV content. Replace `assets/Andrea-Valente-CV.pdf` and update the HTML CV together whenever the approved CV changes. The initial PDF is an unchanged copy of portfolio CV v1. Source archives and private career evidence do not belong here.
+
+Keep project descriptions and links aligned with the profile README. Preserve academic/team attribution and qualified claims. Check mobile layout, keyboard focus, print preview, internal links and PDF download after changes. No external runtime dependencies or analytics are used.
+
+[GitHub Pages setup](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
