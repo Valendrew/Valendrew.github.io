@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Andrea Valente — AI Computer Vision Engineer. Selected public projects, professional experience and CV."><title>Andrea Valente | Computer Vision & Applied ML</title><link rel="stylesheet" href="styles.css"></head>
-<body><a class="skip" href="#main">Skip to content</a><main id="main">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Andrea Valente — AI Computer Vision Engineer. Selected public projects, professional experience and CV."><title>Andrea Valente | Computer Vision & Applied ML</title><link rel="stylesheet" href="styles.css"><script src="theme.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="toolbar theme-toolbar"><button class="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button></div><main id="main">
 <header>
 <p class="eyebrow">Computer vision · Applied ML</p>
 <h1>Andrea Valente</h1>
@@ -14,19 +14,29 @@
 <article class="project">
 <p class="meta">Academic collaboration</p>
 <h3>Counterfactual explanations</h3>
-<p>Co-developed an academic comparison of optimisation-based and DiCE counterfactual explanations for smartphone price predictions.</p>
+<ul class="tags" aria-label="Project technologies and methods"><li>Python</li><li>OMLT</li><li>Pyomo</li><li>CPLEX</li><li>DiCE</li><li>Genetic search</li></ul>
+<p>Co-developed an academic comparison of counterfactual explanations for smartphone price-class predictions: what feature changes would lead the model to a different class? The project compares optimisation with OMLT/Pyomo/CPLEX against DiCE, including genetic search for neural networks.</p>
 <div class="links"><a href="https://github.com/Valendrew/counterfactual-explanations">Repository</a> <a href="https://github.com/Valendrew/counterfactual-demo">Demo repository</a></div></article>
 
 <article class="project">
 <p class="meta">Academic collaboration</p>
+<h3>NLP: POS tagging &amp; abstractive QA</h3>
+<ul class="tags" aria-label="Project technologies and methods"><li>Jupyter Notebook</li><li>GloVe</li><li>BiLSTM / BiGRU</li><li>TinyBERT</li><li>DistilRoBERTa</li><li>CoQA</li></ul>
+<p>Contributed to comparisons of recurrent part-of-speech taggers and transformer encoder-decoder question-answering models. POS experiments compare frozen GloVe embeddings with BiLSTM, BiGRU and dual-layer variants; QA combines TinyBERT and DistilRoBERTa on CoQA, varying seeds and conversation history. QA results remained weak under a three-epoch, hardware-limited training budget; unanswerable questions were excluded.</p>
+<div class="links"><a href="https://github.com/Valendrew/pos-tagging-abstractive-qa">Repository</a></div></article>
+
+<article class="project">
+<p class="meta">Academic collaboration</p>
 <h3>VLSI design</h3>
-<p>Contributed to a university VLSI placement project, focusing on constraint programming and Python-based solver comparisons.</p>
+<ul class="tags" aria-label="Project technologies and methods"><li>Python</li><li>MiniZinc</li><li>Constraint programming</li><li>Chuffed / Gecode</li><li>Strip packing</li></ul>
+<p>Contributed to a university circuit-placement project that minimises plate height while preventing rectangular circuits from overlapping, with fixed and rotatable variants. My focus was constraint programming and Python solver comparisons; the team explored MiniZinc constraints, symmetry handling and search strategies alongside SMT and MIP approaches.</p>
 <div class="links"><a href="https://github.com/Valendrew/vlsi-design">Repository</a></div></article>
 
 <article class="project">
 <p class="meta">Public project</p>
 <h3>Video context pipeline</h3>
-<p>A typed asynchronous media-context pipeline with dependency planning, provider integration and a browser configuration interface.</p>
+<ul class="tags" aria-label="Project technologies and methods"><li>Python</li><li>Pydantic</li><li>HTTPX</li><li>Async</li><li>Dependency planning</li></ul>
+<p>A Python library and local browser builder for assembling transcription, video-understanding, metadata, media and text services. The documented architecture uses typed asynchronous configuration with Pydantic, dependency-based service planning and HTTPX provider adapters, with bounded retries, cancellation and owned-file cleanup. The browser builder exposes dependency graphs and JSON configuration export.</p>
 <div class="links"><a href="https://github.com/Valendrew/video-context-pipeline">Repository</a></div></article>
 
 <a href="https://github.com/Valendrew?tab=repositories">All public repositories →</a></section>
