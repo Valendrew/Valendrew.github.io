@@ -22,7 +22,7 @@ Run `python3 -m http.server 8000` here, then open http://localhost:8000/. Stop w
 
 ## Content updates
 
-Edit `index.html` for the introduction and project cards, `styles.css` for appearance, and `cv/index.html` for CV content. Replace `assets/Andrea-Valente-CV.pdf` and update the HTML CV together whenever the approved CV changes. The initial PDF is an unchanged copy of portfolio CV v1. Source archives and private career evidence do not belong here.
+Edit `index.html` for the introduction and project cards, `styles.css` for appearance, and `cv/index.html` for CV content. Replace `assets/Andrea-Valente-CV.pdf` and update the HTML CV together whenever the approved CV changes. The public PDF is rebuilt from portfolio CV v1 with the email address and mail link removed. Keep email addresses out of both public CV formats and the profile README. Source archives and private career evidence do not belong here.
 
 Keep project descriptions and links aligned with the profile README. Preserve academic/team attribution and qualified claims. Check mobile layout, keyboard focus, print preview, internal links and PDF download after changes. No external runtime dependencies or analytics are used.
 
