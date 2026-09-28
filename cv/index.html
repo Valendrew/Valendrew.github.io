@@ -12,7 +12,7 @@
 </head>
 <body class="cv"><a class="skip" href="#main">Skip to content</a><nav class="toolbar links" aria-label="CV navigation">
 <a href="../">← Portfolio</a><a class="button" href="../assets/Andrea-Valente-CV.pdf" download>Download PDF</a><button class="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button></nav>
-<!-- Content mirrored from the current portfolio CV (cv-v4.tex). Update the canonical source first. -->
+<!-- Content mirrored from the current portfolio CV (cv-v5.tex). Update the canonical source first. -->
 <main id="main">
 <header>
 <h1>Andrea Valente</h1>
@@ -20,53 +20,89 @@
 </header>
 <section>
 <h2>Summary</h2>
-<p>AI Computer Vision Engineer working across model development and evaluation. Builds data and training pipelines, designs experiments, and turns results into practical tools and clear technical recommendations.</p>
+<p>AI computer vision engineer who works on ill-defined problems, where defect criteria or success metrics have to be pinned down before building a pipeline that combines classical image processing, geometric fitting and deep learning on synthetic data. Works with clients on validation and next technical steps, and is moving towards roles that own that technical direction.</p>
 </section>
 <section>
 <h2>Experience</h2>
 <h3>Deep Vision Consulting</h3>
 <p class="meta">Modena, Italy</p>
 <h4>AI Computer Vision Engineer</h4>
-<p class="meta">Apr 2024 – Present</p>
-<ul><li><strong>Industrial package analysis</strong> Became primary implementation owner of a Python analysis suite and designed and built its cloud-integrated dashboard, used by the team on new samples in operational R&amp;D; combined signal analysis, synthetic defect data, DNN segmentation models and geometric processing.</li>
-<li><strong>3D face reconstruction</strong> Led the technical investigation of monocular reconstruction for a global luxury group; built synthetic-data, training and evaluation workflows that exposed accuracy and repeatability limits and helped guide product-scope decisions.</li>
-<li><strong>Point-cloud fitting</strong> Developed a Python package using RANSAC-based geometric fitting for smart-lighting installations, with synthetic point-cloud generation tools configurable for noise, outliers and missing faces to support evaluation.</li>
-<li><strong>Head-pose estimation</strong> Developed data, training, evaluation and tracking pipelines for a compact 6DoF model for browser virtual try-on; built comparison tools to support model selection with the team and client.</li>
-<li><strong>Browser inference</strong> Implemented project-specific ONNX Runtime/WebGPU integration and benchmarking, profiled CPU/GPU execution, and tested a pre-production path across devices.</li>
+<p class="meta">Apr 2024 - Present</p>
+<p class="cv-project"><em>Industrial package analysis</em>, manufacturing R&amp;D</p>
+<ul><li>As primary implementation owner, built a Python analysis suite that assesses package samples from force signals and image sequences, which the client’s R&amp;D team used on new samples as an operational tool.</li>
+<li>Turned loosely specified defect criteria into measurable features: evaluated force-curve features, then added image segmentation and RANSAC geometric fitting where force alone could not separate defects from sample-preparation failures.</li>
+<li>With few real examples of a critical defect and no way to produce representative physical ones, synthesised defect geometry from annotated images and trained a U-Net for defect keypoints on the result.</li>
+<li>Designed and built the analysis dashboard end-to-end (Celery/RabbitMQ GPU job queue, PostgreSQL, cloud storage, Docker) for training, evaluation and inspection of failed samples; client engineers deployed it.</li>
+</ul>
+<p class="cv-project"><em>3D face reconstruction and measurement</em>, global luxury group</p>
+<ul><li>With no reconstruction KPIs, real-data benchmark or tolerances at the start, built the client’s first quantitative evaluation framework for monocular 3D face reconstruction: registered annotated face scans to the topology of a 3D morphable head model and defined region-level error metrics and task-specific measurement KPIs.</li>
+<li>Built synthetic data and training pipelines for monocular reconstruction networks based on a 3D morphable head model, rendering with PyTorch3D and Blender and tracking experiments in MLflow.</li>
+<li>Designed the acquisition protocol for a multi-device capture study, then validated, processed and analysed the collected data.</li>
+<li>Built a reusable interactive analysis tool that breaks accuracy and repeatability down by device, head pose, distance and lighting; its results set the next technical priorities agreed with the client.</li>
+</ul>
+<p class="cv-project"><em>Efficient deep learning models for mobile inference</em>, global luxury group</p>
+<ul><li>Implemented the Python training, evaluation, export and tracking pipelines for a compact 6DoF head-pose model for browser virtual try-on; screened lightweight CNN backbones and built the comparison tooling behind the model the client approved as default.</li>
+<li>Benchmarked ONNX Runtime WebGPU against the TFLite baseline in the browser, counting GPU synchronisation and output retrieval in the timings, and integrated the WebGPU path with graph capture as the intended runtime for the pre-production application.</li>
+</ul>
+<p class="cv-project"><em>Point-cloud fitting</em>, smart-device manufacturer</p>
+<ul><li>Developed a Python package for RANSAC-based fitting of geometric primitives to point clouds of smart-lighting installations, with synthetic point-cloud generators configurable for noise, outliers and missing faces to test the fitting.</li>
 </ul>
 <h4>AI Computer Vision Engineer (Intern)</h4>
-<p class="meta">Sep 2023 – Mar 2024</p>
-<ul><li>Completed an MSc thesis on 3D face reconstruction for virtual try-on; compared geometric reconstruction and deformable-mesh approaches, generated synthetic training data, and trained and evaluated a face-shape estimation network, investigating synthetic-to-real limitations.</li>
+<p class="meta">Sep 2023 - Mar 2024</p>
+<ul><li>Master’s thesis on 3D face reconstruction for virtual try-on: evaluated NeRF/MVS against monocular 3D morphable-model methods for a few-seconds, single-image target, continued with morphable-model inference, and trained a face-shape regressor on synthetic renders.</li>
 </ul>
 <h3>Vaia Innovations</h3>
 <p class="meta">Remote, part-time</p>
 <h4>Frontend Web Developer</h4>
-<p class="meta">Jun 2022 – Sep 2022</p>
+<p class="meta">Jun 2022 - Sep 2022</p>
 <ul><li>Built responsive interfaces from Figma designs for article exploration and writing on a Web3 publishing platform, using TypeScript, Vue.js and Tailwind CSS.</li>
 </ul>
 </section>
 <section>
 <h2>Skills</h2>
-<dl><dt>ML and evaluation</dt><dd>Python, PyTorch, OpenCV, NumPy, MLflow; synthetic data, segmentation, model training and source-aware validation.</dd>
+<dl><dt>Computer vision</dt><dd>OpenCV, scikit-image, U-Net segmentation and keypoint detection, RANSAC, 3D morphable models, mesh registration, point-cloud processing, Open3D</dd>
 </dl>
-<dl><dt>Geometric vision</dt><dd>3D reconstruction, FLAME mesh fitting, camera geometry, point-cloud processing, RANSAC, SciPy optimisation, Open3D, PyTorch3D, Blender.</dd>
+<dl><dt>Machine learning</dt><dd>PyTorch, synthetic data (Blender, PyTorch3D), MLflow, model evaluation, ONNX Runtime, WebGPU, TFLite</dd>
 </dl>
-<dl><dt>Inference and testing</dt><dd>ONNX Runtime, WebGPU, TFLite, GPU profiling, Perfetto, Playwright, cross-device testing.</dd>
+<dl><dt>Engineering</dt><dd>Python, NumPy, Polars, Docker, Celery, RabbitMQ, PostgreSQL, Playwright, Git, TypeScript, Vue.js</dd>
 </dl>
-<dl><dt>Software and delivery</dt><dd>Git, Docker, Celery, RabbitMQ, PostgreSQL, cloud-storage integration; TypeScript, Vue.js, Tailwind CSS.</dd>
-</dl>
+</section>
+<section>
+<h2>Projects</h2>
+<h4>Comparative argument retrieval and stance detection</h4>
+<p class="meta"><a href="https://github.com/Valendrew/argument-retrieval-comparative-questions">GitHub</a> · MSc, 2022/23</p>
+<p>Three-person team project comparing sparse, dense, hybrid and MonoT5-reranked retrieval for comparative questions, with DistilBERT-based stance classification.</p>
+<h4>POS tagging and abstractive question answering</h4>
+<p class="meta"><a href="https://github.com/Valendrew/pos-tagging-abstractive-qa">GitHub</a> · MSc, 2022/23</p>
+<p>Team comparisons of recurrent POS taggers (BiLSTM, BiGRU) and transformer encoder-decoder question-answering models (TinyBERT, DistilRoBERTa).</p>
+<h4>Crime-category classification on Hadoop/Spark</h4>
+<p class="meta"><a href="https://github.com/Valendrew/big-data-project">GitHub</a> · MSc, 2022/23</p>
+<p>PySpark preprocessing, feature design and classification on a three-node cluster, using only information available at prediction time.</p>
+<h4>Rectangular circuit placement</h4>
+<p class="meta"><a href="https://github.com/Valendrew/vlsi-design">GitHub</a> · MSc, 2021/22</p>
+<p>Two-person project on non-overlapping placement with minimum plate height across CP, SMT and MIP, focusing on the constraint-programming models and Python solver comparisons.</p>
+<h4>Counterfactual explanations</h4>
+<p class="meta"><a href="https://github.com/Valendrew/counterfactual-explanations">GitHub</a> · MSc</p>
+<p>Co-developed a comparison of optimisation-based and DiCE counterfactuals for smartphone price prediction.</p>
 </section>
 <section>
 <h2>Education</h2>
-<h3>MSc in Artificial Intelligence — University of Bologna</h3>
-<p>110/110 with honours<br><span class="meta">Sep 2021 – Mar 2024</span></p>
-<h3>BSc in Computer Science — University of Bologna</h3>
-<p>110/110 with honours<br><span class="meta">Sep 2018 – Dec 2021</span></p>
+<h3>MSc in Artificial Intelligence, University of Bologna</h3>
+<p>110/110 with honours<br><span class="meta">Sep 2021 - Mar 2024</span></p>
+<p>Thesis: <a href="https://amslaurea.unibo.it/31791/">A study of 3D face reconstruction methods: from geometry to deformable mesh models</a>.<br>Selected coursework: Machine Learning and Deep Learning; Machine Learning for Computer Vision; Image Processing and Computer Vision; Natural Language Processing; Combinatorial Decision Making and Optimization.</p>
+<h3>BSc in Computer Science, University of Bologna</h3>
+<p>110/110 with honours<br><span class="meta">Sep 2018 - Dec 2021</span></p>
+<p>Thesis: DeblurGAN-v2 for motion-blur removal in tomographic images, compared against SelfDeblur.</p>
+<h3>ELLIS Winter School on Foundation Models (FoMo), Amsterdam</h3>
+<p class="meta">Mar 2026</p>
+</section>
+<section>
+<h2>Certifications</h2>
+<p>ICVSS 2025, International Computer Vision Summer School: exam certificate<br><span class="meta">Jul 2025</span></p>
 </section>
 <section>
 <h2>Languages</h2>
-<p>Italian: native. English: professional working fluency; MSc taught in English.</p>
-<p>IELTS Academic: overall band 7.0 (Jul 2021).</p>
+<p>Italian: native. English: professional working fluency; MSc taught in English; IELTS Academic 7.0 (2021).</p>
 </section>
 </main>
 <footer>
