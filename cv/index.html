@@ -1,18 +1,18 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Andrea Valente — AI Computer Vision Engineer. Selected public projects, professional experience and CV."><title>Andrea Valente | Curriculum vitae</title><link rel="stylesheet" href="../styles.css"><script src="../theme.js"></script>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Andrea Valente, AI Computer Vision Engineer. Selected public projects, professional experience and CV."><title>Andrea Valente | Curriculum vitae</title><link rel="stylesheet" href="../styles.css"><script src="../theme.js"></script>
 <meta property="og:title" content="Andrea Valente | CV">
-<meta property="og:description" content="Computer vision and applied ML — experience, education and skills.">
+<meta property="og:description" content="Computer vision and applied ML: experience, education and skills.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://valendrew.github.io/cv/">
 <meta property="og:image" content="https://valendrew.github.io/assets/cv-preview.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="Andrea Valente | CV — Computer Vision &amp; Applied ML">
+<meta property="og:image:alt" content="Andrea Valente | CV: Computer Vision &amp; Applied ML">
 </head>
 <body class="cv"><a class="skip" href="#main">Skip to content</a><nav class="toolbar links" aria-label="CV navigation">
 <a href="../">← Portfolio</a><a class="button" href="../assets/Andrea-Valente-CV.pdf" download>Download PDF</a><button class="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button></nav>
-<!-- Content mirrored from the current portfolio CV (cv-v5.tex). Update the canonical source first. -->
+<!-- Content mirrored from the current portfolio CV (cv-v6.tex). Update the canonical source first. -->
 <main id="main">
 <header>
 <h1>Andrea Valente</h1>
@@ -20,89 +20,92 @@
 </header>
 <section>
 <h2>Summary</h2>
-<p>AI computer vision engineer who works on ill-defined problems, where defect criteria or success metrics have to be pinned down before building a pipeline that combines classical image processing, geometric fitting and deep learning on synthetic data. Works with clients on validation and next technical steps, and is moving towards roles that own that technical direction.</p>
+<p>AI computer vision engineer in applied R&amp;D on open-ended client problems, from 3D geometry and custom deep learning models to GPU inference in the browser. Traces issues to their root cause, whether in the data, the evaluation or the layers beneath the application.</p>
 </section>
 <section>
 <h2>Experience</h2>
 <h3>Deep Vision Consulting</h3>
 <p class="meta">Modena, Italy</p>
 <h4>AI Computer Vision Engineer</h4>
-<p class="meta">Apr 2024 - Present</p>
-<p class="cv-project"><em>Industrial package analysis</em>, manufacturing R&amp;D</p>
-<ul><li>As primary implementation owner, built a Python analysis suite that assesses package samples from force signals and image sequences, which the client’s R&amp;D team used on new samples as an operational tool.</li>
-<li>Turned loosely specified defect criteria into measurable features: evaluated force-curve features, then added image segmentation and RANSAC geometric fitting where force alone could not separate defects from sample-preparation failures.</li>
-<li>With few real examples of a critical defect and no way to produce representative physical ones, synthesised defect geometry from annotated images and trained a U-Net for defect keypoints on the result.</li>
-<li>Designed and built the analysis dashboard end-to-end (Celery/RabbitMQ GPU job queue, PostgreSQL, cloud storage, Docker) for training, evaluation and inspection of failed samples; client engineers deployed it.</li>
+<p class="meta">Apr 2024 - Aug 2026</p>
+<p class="cv-project"><strong>Automated package-seal inspection</strong> | global packaging manufacturer</p>
+<ul><li>Worked with the client’s sealing specialists, including on site, to turn how they judge torn package seals by hand into an interpretable inspection: physical force features, statistics of normal samples and computer vision (U-Net detection with RANSAC geometric fitting), combined so each covers cases the others miss while every result stays explainable. Adapted to three packaging materials, it matched or outperformed every specialist in the client’s accuracy comparison.</li>
+<li>A critical seal defect was too rare to collect and could not be produced physically, so built a synthetic-data pipeline that turned a handful of annotated real images into thousands of realistic training images (thin-plate-spline warping) for a U-Net detector.</li>
+<li>Built the dashboard the client’s sealing R&amp;D team adopted as a working tool on new samples: training and evaluation jobs on a GPU queue, and each score shown beside its image overlays and force plots, so the specialists could see why a package failed and find pipeline problems themselves.</li>
 </ul>
-<p class="cv-project"><em>3D face reconstruction and measurement</em>, global luxury group</p>
-<ul><li>With no reconstruction KPIs, real-data benchmark or tolerances at the start, built the client’s first quantitative evaluation framework for monocular 3D face reconstruction: registered annotated face scans to the topology of a 3D morphable head model and defined region-level error metrics and task-specific measurement KPIs.</li>
-<li>Built synthetic data and training pipelines for monocular reconstruction networks based on a 3D morphable head model, rendering with PyTorch3D and Blender and tracking experiments in MLflow.</li>
-<li>Designed the acquisition protocol for a multi-device capture study, then validated, processed and analysed the collected data.</li>
-<li>Built a reusable interactive analysis tool that breaks accuracy and repeatability down by device, head pose, distance and lighting; its results set the next technical priorities agreed with the client.</li>
+<p class="cv-project"><strong>3D face measurement from a single image</strong> | global luxury eyewear group</p>
+<ul><li>The client wanted precise face measurements from a single phone or laptop image but had no way to measure 3D reconstruction accuracy. Built its first quantitative benchmark: fitted a 3D morphable head model to hand-annotated 3D face scans as ground truth, and scored reconstructions region by region with signed surface distances instead of one global error.</li>
+<li>Real 3D face data was scarce and rarely licensed for commercial use, so trained the reconstruction network on synthetic renders: a regressor of 3D face-shape parameters with a loss focused on key facial regions, across tracked experiments varying camera, pose, lighting and renderer, identifying the data and loss choices that worked best.</li>
+<li>Designed the protocol for a multi-device dataset with physical ground-truth measurements, validated and structured its several thousand captures, and built an interactive analysis tool the client used to explore accuracy and repeatability by device, pose, distance and lighting. The results showed single-image 3D was too ill-posed for the product, and the try-on kept its head-pose approach.</li>
 </ul>
-<p class="cv-project"><em>Efficient deep learning models for mobile inference</em>, global luxury group</p>
-<ul><li>Implemented the Python training, evaluation, export and tracking pipelines for a compact 6DoF head-pose model for browser virtual try-on; screened lightweight CNN backbones and built the comparison tooling behind the model the client approved as default.</li>
-<li>Benchmarked ONNX Runtime WebGPU against the TFLite baseline in the browser, counting GPU synchronisation and output retrieval in the timings, and integrated the WebGPU path with graph capture as the intended runtime for the pre-production application.</li>
+<p class="cv-project"><strong>Head-pose model and in-browser inference for virtual try-on</strong> | global luxury eyewear group</p>
+<ul><li>Designed and trained a compact network that predicts head position and rotation (6DoF) directly, giving the client a custom model it can extend and size per device instead of a landmark pipeline. The proposed backbone became the client’s default at a quarter of the reference model’s size, and was used in a pre-production version of the try-on.</li>
+<li>Designed the ground-truth strategy, combining pseudo-labels from the existing pipeline with synthetic faces whose landmarks are exact, and balanced the training mix across pose zones because the client’s data was mostly frontal.</li>
+<li>Benchmarked the browser runtimes end to end across phones and browsers, then ported the C++/WebAssembly inference library to ONNX Runtime WebGPU for two models, with WGSL preprocessing shaders, browser tests and CI. It became the intended runtime of the pre-production try-on and was faster in the client’s benchmark across low- to high-end phones.</li>
+<li>Investigated why a GPU preprocessing step took milliseconds when its GPU work took only microseconds: a Perfetto timeline across browser processes and the Chromium source showed that the browser checks for GPU completion on a timer, by design. Turned the finding into guidance for the pipeline: queue related GPU work, wait once, and overlap unavoidable waits with CPU work.</li>
 </ul>
-<p class="cv-project"><em>Point-cloud fitting</em>, smart-device manufacturer</p>
-<ul><li>Developed a Python package for RANSAC-based fitting of geometric primitives to point clouds of smart-lighting installations, with synthetic point-cloud generators configurable for noise, outliers and missing faces to test the fitting.</li>
+<p class="cv-project"><strong>Shape fitting for scanned LED installations</strong> | smart decorative lighting company</p>
+<ul><li>Fitted geometric shapes (boxes, cylinders, cones, pyramids) to scanned LED positions so lighting animations could follow an installation’s form: a RANSAC framework with geometry-based candidates and a single bounded least-squares refinement, box fitting that accepts the few faces real installations show, and rejection of scans too incomplete to fit. Tested on synthetic and real point clouds.</li>
 </ul>
 <h4>AI Computer Vision Engineer (Intern)</h4>
 <p class="meta">Sep 2023 - Mar 2024</p>
-<ul><li>Master’s thesis on 3D face reconstruction for virtual try-on: evaluated NeRF/MVS against monocular 3D morphable-model methods for a few-seconds, single-image target, continued with morphable-model inference, and trained a face-shape regressor on synthetic renders.</li>
+<p>MSc thesis internship on 3D face reconstruction for virtual try-on.</p>
+<ul><li>Compared multi-view reconstruction (neural radiance fields, multi-view stereo) with single-image 3D morphable-model regressors on 3D face scans, and chose the single-image route for a fast one-off face measurement, since multi-view methods needed dozens of images, precise camera poses and a still subject.</li>
+<li>Designed tens of thousands of synthetic training images from an analysis of how the head model’s shape parameters change the face regions glasses rest on, and trained a shape regressor on them; its gap on real scans set the direction of the client project that followed: real ground truth by mesh fitting and a real benchmark.</li>
 </ul>
 <h3>Vaia Innovations</h3>
 <p class="meta">Remote, part-time</p>
 <h4>Frontend Web Developer</h4>
 <p class="meta">Jun 2022 - Sep 2022</p>
-<ul><li>Built responsive interfaces from Figma designs for article exploration and writing on a Web3 publishing platform, using TypeScript, Vue.js and Tailwind CSS.</li>
+<ul><li>Built responsive Vue.js, TypeScript and Tailwind CSS views from Figma designs for article writing and exploration on Scripta, a Web3 publishing platform.</li>
 </ul>
 </section>
 <section>
 <h2>Skills</h2>
-<dl><dt>Computer vision</dt><dd>OpenCV, scikit-image, U-Net segmentation and keypoint detection, RANSAC, 3D morphable models, mesh registration, point-cloud processing, Open3D</dd>
+<dl><dt>Computer vision and 3D</dt><dd>OpenCV, scikit-image, U-Net segmentation and keypoint detection, RANSAC and geometric fitting, 3D morphable head model fitting, head-pose estimation, point clouds (Open3D), PyTorch3D, Blender</dd>
 </dl>
-<dl><dt>Machine learning</dt><dd>PyTorch, synthetic data (Blender, PyTorch3D), MLflow, model evaluation, ONNX Runtime, WebGPU, TFLite</dd>
+<dl><dt>Machine learning</dt><dd>PyTorch, timm, synthetic training data, model evaluation and benchmarking, MLflow</dd>
 </dl>
-<dl><dt>Engineering</dt><dd>Python, NumPy, Polars, Docker, Celery, RabbitMQ, PostgreSQL, Playwright, Git, TypeScript, Vue.js</dd>
+<dl><dt>Inference and performance</dt><dd>ONNX Runtime, WebGPU (WGSL shaders), WebAssembly, TFLite, Perfetto profiling</dd>
+</dl>
+<dl><dt>Software engineering</dt><dd>Python, TypeScript, Docker, Celery, RabbitMQ, PostgreSQL, Azure, Playwright, CI, Git, Vue.js</dd>
 </dl>
 </section>
 <section>
 <h2>Projects</h2>
-<h4>Comparative argument retrieval and stance detection</h4>
-<p class="meta"><a href="https://github.com/Valendrew/argument-retrieval-comparative-questions">GitHub</a> · MSc, 2022/23</p>
-<p>Three-person team project comparing sparse, dense, hybrid and MonoT5-reranked retrieval for comparative questions, with DistilBERT-based stance classification.</p>
-<h4>POS tagging and abstractive question answering</h4>
-<p class="meta"><a href="https://github.com/Valendrew/pos-tagging-abstractive-qa">GitHub</a> · MSc, 2022/23</p>
-<p>Team comparisons of recurrent POS taggers (BiLSTM, BiGRU) and transformer encoder-decoder question-answering models (TinyBERT, DistilRoBERTa).</p>
-<h4>Crime-category classification on Hadoop/Spark</h4>
-<p class="meta"><a href="https://github.com/Valendrew/big-data-project">GitHub</a> · MSc, 2022/23</p>
-<p>PySpark preprocessing, feature design and classification on a three-node cluster, using only information available at prediction time.</p>
-<h4>Rectangular circuit placement</h4>
-<p class="meta"><a href="https://github.com/Valendrew/vlsi-design">GitHub</a> · MSc, 2021/22</p>
-<p>Two-person project on non-overlapping placement with minimum plate height across CP, SMT and MIP, focusing on the constraint-programming models and Python solver comparisons.</p>
-<h4>Counterfactual explanations</h4>
-<p class="meta"><a href="https://github.com/Valendrew/counterfactual-explanations">GitHub</a> · MSc</p>
-<p>Co-developed a comparison of optimisation-based and DiCE counterfactuals for smartphone price prediction.</p>
+<h4>Counterfactual explanations for a price classifier</h4>
+<p class="meta"><a href="https://github.com/Valendrew/counterfactual-explanations">GitHub</a> · <a href="https://github.com/Valendrew/counterfactual-demo">Demo</a> · MSc, Mar - Jun 2023</p>
+<ul><li>Two-person team: explained a PyTorch phone-price classifier by encoding it as mixed-integer constraints (OMLT, Pyomo, CPLEX), and compared the counterfactuals with DiCE’s genetic search on validity, sparsity and realism; built the interactive FastAPI and Vue demo alone.</li>
+</ul>
+<h4>Rectangular circuit placement (VLSI)</h4>
+<p class="meta"><a href="https://github.com/Valendrew/vlsi-design">GitHub</a> · MSc, Jul - Sep 2022</p>
+<ul><li>Two-person team: modelled the same strip-packing problem in constraint programming (MiniZinc), SMT (Z3, CVC4) and mixed-integer programming (PuLP, CPLEX) with a shared Python harness; the constraint-programming model solved all but one instance optimally, and a set-covering reformulation solved about a third more instances than the direct integer-programming model.</li>
+</ul>
+<h4>Comparative argument retrieval</h4>
+<p class="meta"><a href="https://github.com/Valendrew/argument-retrieval-comparative-questions">GitHub</a> · MSc, Nov 2022 - Jan 2023</p>
+<ul><li>Three-person team: built sparse and dense indexes over a large passage corpus and compared keyword, dense, hybrid and MonoT5-reranked search for comparative questions; hybrid fusion gave the best recall and neural reranking the best top-five ranking.</li>
+</ul>
+<h4>Video context pipeline</h4>
+<p class="meta"><a href="https://github.com/Valendrew/video-context-pipeline">GitHub</a> · Personal, Sep 2026</p>
+<ul><li>Designed and specified a typed asynchronous Python library that turns a video link into transcript, visual description, metadata and media through dependency-driven pipelines; tested it against the real transcription and video-understanding services, and released it as versioned GitHub releases.</li>
+</ul>
 </section>
 <section>
 <h2>Education</h2>
-<h3>MSc in Artificial Intelligence, University of Bologna</h3>
-<p>110/110 with honours<br><span class="meta">Sep 2021 - Mar 2024</span></p>
-<p>Thesis: <a href="https://amslaurea.unibo.it/31791/">A study of 3D face reconstruction methods: from geometry to deformable mesh models</a>.<br>Selected coursework: Machine Learning and Deep Learning; Machine Learning for Computer Vision; Image Processing and Computer Vision; Natural Language Processing; Combinatorial Decision Making and Optimization.</p>
-<h3>BSc in Computer Science, University of Bologna</h3>
-<p>110/110 with honours<br><span class="meta">Sep 2018 - Dec 2021</span></p>
-<p>Thesis: DeblurGAN-v2 for motion-blur removal in tomographic images, compared against SelfDeblur.</p>
-<h3>ELLIS Winter School on Foundation Models (FoMo), Amsterdam</h3>
-<p class="meta">Mar 2026</p>
+<h3>Master’s Degree in Artificial Intelligence</h3>
+<p>University of Bologna · 110/110 cum laude · Thesis: A study of 3D face reconstruction methods: from geometry to deformable mesh models<br><span class="meta">Sep 2021 - Mar 2024</span></p>
+<h3>Bachelor’s Degree in Computer Science</h3>
+<p>University of Bologna · 110/110 cum laude · Thesis: evaluated a pretrained network for removing motion blur from X-ray tomographic images<br><span class="meta">Sep 2018 - Dec 2021</span></p>
 </section>
 <section>
-<h2>Certifications</h2>
-<p>ICVSS 2025, International Computer Vision Summer School: exam certificate<br><span class="meta">Jul 2025</span></p>
+<h2>Certifications and Training</h2>
+<p><strong>International Computer Vision Summer School (ICVSS)</strong><br>Sicily, Italy · Selected by application while working in industry · Written exam passed, certificate<br><span class="meta">Jul 2025</span></p>
+<p><strong>ELLIS Winter School on Foundation Models (FoMo)</strong><br>Amsterdam, Netherlands · Selected by application while working in industry · Attended<br><span class="meta">Mar 2026</span></p>
+<p><strong>IELTS Academic, overall band 7.0</strong><br><span class="meta">Jul 2021</span></p>
 </section>
 <section>
 <h2>Languages</h2>
-<p>Italian: native. English: professional working fluency; MSc taught in English; IELTS Academic 7.0 (2021).</p>
+<p>Italian (native); English (C1, professional working proficiency)</p>
 </section>
 </main>
 <footer>
