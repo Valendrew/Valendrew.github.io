@@ -22,31 +22,31 @@
 <section aria-labelledby="projects">
 <h2 id="projects">Selected public projects</h2>
 <article class="project">
-<p class="meta">Academic collaboration</p>
+<p class="meta">MSc project</p>
 <h3>Counterfactual explanations</h3>
-<ul class="tags" aria-label="Project technologies and methods"><li>Python</li><li>OMLT</li><li>Pyomo</li><li>CPLEX</li><li>DiCE</li><li>Genetic search</li></ul>
-<p>Co-developed an academic comparison of counterfactual explanations for smartphone price-class predictions: what feature changes would lead the model to a different class? The project compares optimisation with OMLT/Pyomo/CPLEX against DiCE, including genetic search for neural networks.</p>
+<ul class="tags" aria-label="Project technologies and methods"><li>Python</li><li>PyTorch</li><li>OMLT</li><li>Pyomo</li><li>CPLEX</li><li>DiCE</li></ul>
+<p>What would a phone need to change for a price classifier to put it in another price range? The project encodes a PyTorch classifier as mixed-integer constraints (OMLT, Pyomo, CPLEX) and compares the resulting counterfactual explanations with DiCE's genetic search on validity, sparsity and realism. An interactive demo (FastAPI, Vue) shows which features change.</p>
 <div class="links"><a href="https://github.com/Valendrew/counterfactual-explanations">Repository</a> <a href="https://github.com/Valendrew/counterfactual-demo">Demo repository</a></div></article>
 
 <article class="project">
-<p class="meta">Academic collaboration</p>
-<h3>NLP: POS tagging &amp; abstractive QA</h3>
-<ul class="tags" aria-label="Project technologies and methods"><li>Jupyter Notebook</li><li>GloVe</li><li>BiLSTM / BiGRU</li><li>TinyBERT</li><li>DistilRoBERTa</li><li>CoQA</li></ul>
-<p>Contributed to comparisons of recurrent part-of-speech taggers and transformer encoder-decoder question-answering models. POS experiments compare frozen GloVe embeddings with BiLSTM, BiGRU and dual-layer variants; QA combines TinyBERT and DistilRoBERTa on CoQA, varying seeds and conversation history. QA results remained weak under a three-epoch, hardware-limited training budget; unanswerable questions were excluded.</p>
-<div class="links"><a href="https://github.com/Valendrew/pos-tagging-abstractive-qa">Repository</a></div></article>
-
-<article class="project">
-<p class="meta">Academic collaboration</p>
-<h3>VLSI design</h3>
-<ul class="tags" aria-label="Project technologies and methods"><li>Python</li><li>MiniZinc</li><li>Constraint programming</li><li>Chuffed / Gecode</li><li>Strip packing</li></ul>
-<p>Contributed to a university circuit-placement project that minimises plate height while preventing rectangular circuits from overlapping, with fixed and rotatable variants. My focus was constraint programming and Python solver comparisons; the team explored MiniZinc constraints, symmetry handling and search strategies alongside SMT and MIP approaches.</p>
+<p class="meta">MSc project</p>
+<h3>Rectangular circuit placement (VLSI)</h3>
+<ul class="tags" aria-label="Project technologies and methods"><li>Python</li><li>MiniZinc</li><li>Constraint programming</li><li>SMT</li><li>MIP</li><li>Strip packing</li></ul>
+<p>Places rectangular circuits on a plate of fixed width without overlaps, keeping the plate as short as possible. The same problem is modelled in constraint programming (MiniZinc), SMT (Z3, CVC4) and mixed-integer programming (PuLP, CPLEX), with a shared Python harness that compares them on 40 instances.</p>
 <div class="links"><a href="https://github.com/Valendrew/vlsi-design">Repository</a></div></article>
 
 <article class="project">
-<p class="meta">Public project</p>
+<p class="meta">MSc project</p>
+<h3>Comparative argument retrieval</h3>
+<ul class="tags" aria-label="Project technologies and methods"><li>Python</li><li>Pyserini</li><li>FAISS</li><li>MonoT5</li><li>DistilBERT</li></ul>
+<p>Finds passages that answer comparative questions ("is X better than Y?") and classifies their stance. Compares keyword, dense, hybrid and MonoT5-reranked search over a large passage corpus: hybrid fusion gave the best recall, neural reranking the best top-five ranking.</p>
+<div class="links"><a href="https://github.com/Valendrew/argument-retrieval-comparative-questions">Repository</a></div></article>
+
+<article class="project">
+<p class="meta">Personal project</p>
 <h3>Video context pipeline</h3>
 <ul class="tags" aria-label="Project technologies and methods"><li>Python</li><li>Pydantic</li><li>HTTPX</li><li>Async</li><li>Dependency planning</li></ul>
-<p>A Python library and local browser builder for assembling transcription, video-understanding, metadata, media and text services. The documented architecture uses typed asynchronous configuration with Pydantic, dependency-based service planning and HTTPX provider adapters, with bounded retries, cancellation and owned-file cleanup. The browser builder exposes dependency graphs and JSON configuration export.</p>
+<p>A Python library that turns a video link into a transcript, a visual description, metadata and media, so an application can use videos without handling the downloading and processing itself. Steps run in dependency order with bounded retries and cleanup, and a local browser builder shows each pipeline and exports its configuration.</p>
 <div class="links"><a href="https://github.com/Valendrew/video-context-pipeline">Repository</a></div></article>
 
 <a href="https://github.com/Valendrew?tab=repositories">All public repositories →</a></section>
