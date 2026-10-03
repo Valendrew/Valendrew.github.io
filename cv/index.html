@@ -13,7 +13,7 @@
 </head>
 <body class="cv"><a class="skip" href="#main">Skip to content</a><nav class="toolbar links" aria-label="CV navigation">
 <a href="../">← Portfolio</a><a class="button" href="../assets/Andrea-Valente-CV.pdf" download>Download PDF</a><button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode" title="Dark mode" hidden><svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg></button></nav>
-<!-- Content mirrored from the current portfolio CV (cv-v9.tex). Update the canonical source first. -->
+<!-- Content mirrored from the current portfolio CV (cv-v10.tex). Update the canonical source first. -->
 <main id="main">
 <header>
 <h1>Andrea Valente</h1>
@@ -41,7 +41,7 @@
 <li>Designed the protocol for a multi-device dataset with physical ground-truth measurements, validated and structured its several thousand captures, and built an interactive analysis tool the client used to explore accuracy and repeatability by device, pose, distance and lighting. The results showed single-image 3D was too ill-posed for the product, and the try-on kept its head-pose approach.</li>
 </ul>
 <p class="cv-project"><strong>Head-pose model and in-browser inference for virtual try-on</strong> | global luxury eyewear group</p>
-<ul><li>Designed and trained a compact network that predicts head position and rotation (6DoF) directly, giving the client a custom model it can extend and size per device instead of a landmark pipeline. The proposed backbone became the client’s default at a quarter of the reference model’s size, and was used in a pre-production version of the try-on.</li>
+<ul><li>To replace a closed-source face-landmark model with one the client owns and can extend, designed and trained a compact network that predicts head position and rotation (6DoF) directly with similar accuracy. Tailored to the task, the proposed backbone became the client’s default at a quarter of the reference model’s size, and was used in a pre-production version of the try-on.</li>
 <li>Designed the ground-truth strategy, combining pseudo-labels from the existing pipeline with synthetic faces whose landmarks are exact, and balanced the training mix across pose zones because the client’s data was mostly frontal.</li>
 <li>Benchmarked the browser runtimes end to end across phones and browsers, then ported the C++/WebAssembly inference library to ONNX Runtime WebGPU for two models, with WGSL preprocessing shaders, browser tests and CI. It became the intended runtime of the pre-production try-on and was faster in the client’s benchmark across low- to high-end phones.</li>
 <li>Investigated why a GPU preprocessing step took milliseconds when its GPU work took only microseconds: a Perfetto timeline across browser processes and the Chromium source showed that the browser checks for GPU completion on a timer, by design. Turned the finding into guidance for the pipeline: queue related GPU work, wait once, and overlap unavoidable waits with CPU work.</li>
