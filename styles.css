@@ -110,8 +110,12 @@ h3{font-size:12pt}
 .tags{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:.75rem 0 1rem}
 .tags li{font-size:.875rem;line-height:1.5;background:var(--tag);color:var(--text);border:1px solid var(--border);border-radius:.3rem;padding:.2rem .6rem}
 .theme-toolbar{display:flex;justify-content:flex-end}
-.theme-toggle{font:inherit;font-size:.9rem;cursor:pointer;color:var(--text);background:var(--tag);border:1px solid var(--border);border-radius:.3rem;padding:.4rem .8rem}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;padding:0;cursor:pointer;color:var(--text);background:var(--tag);border:1px solid var(--border);border-radius:50%}
+.theme-toggle svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.theme-toggle .icon-sun,.theme-toggle[aria-pressed="true"] .icon-moon{display:none}
+.theme-toggle[aria-pressed="true"] .icon-sun{display:block}
 .theme-toggle:focus-visible{outline:3px solid var(--link);outline-offset:4px}
 .theme-toggle:hover{border-color:var(--link)}
 .theme-toggle[hidden]{display:none}
 @media print{html,html[data-theme],html:not([data-theme="light"]){color-scheme:light;--bg:#fff;--text:#000;--heading:#000;--muted:#333;--link:#000;--border:#ccc;--tag:#fff}body{background:#fff}h1,h2,h3,h4,.meta,.eyebrow,.tags li{color:#000}.tags li{background:#fff}.theme-toggle,.theme-toolbar{display:none}}
+.updated{font-size:.875rem}

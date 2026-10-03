@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Andrea Valente, AI Computer Vision Engineer. Selected public projects, professional experience and CV."><title>Andrea Valente | Curriculum vitae</title><link rel="stylesheet" href="../styles.css"><script src="../theme.js"></script>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Andrea Valente, AI Computer Vision Engineer. Selected public projects, professional experience and CV."><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><title>Andrea Valente | Curriculum vitae</title><link rel="stylesheet" href="../styles.css"><script src="../theme.js"></script>
 <meta property="og:title" content="Andrea Valente | CV">
 <meta property="og:description" content="Computer vision and applied ML: experience, education and skills.">
 <meta property="og:type" content="website">
@@ -9,14 +9,16 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:alt" content="Andrea Valente | CV: Computer Vision &amp; Applied ML">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Andrea Valente","jobTitle":"AI Computer Vision Engineer","url":"https://valendrew.github.io/","address":{"@type":"PostalAddress","addressLocality":"Bologna","addressCountry":"IT"},"sameAs":["https://www.linkedin.com/in/andrea-valente0","https://github.com/Valendrew","https://t.me/Valendrew"]}</script>
 </head>
 <body class="cv"><a class="skip" href="#main">Skip to content</a><nav class="toolbar links" aria-label="CV navigation">
-<a href="../">← Portfolio</a><a class="button" href="../assets/Andrea-Valente-CV.pdf" download>Download PDF</a><button class="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button></nav>
-<!-- Content mirrored from the current portfolio CV (cv-v7.tex). Update the canonical source first. -->
+<a href="../">← Portfolio</a><a class="button" href="../assets/Andrea-Valente-CV.pdf" download>Download PDF</a><button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode" title="Dark mode" hidden><svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg></button></nav>
+<!-- Content mirrored from the current portfolio CV (cv-v9.tex). Update the canonical source first. -->
 <main id="main">
 <header>
 <h1>Andrea Valente</h1>
-<p class="contact">Bologna, Italy<br><a href="https://www.linkedin.com/in/andrea-valente0">linkedin.com/in/andrea-valente0</a> · <a href="https://github.com/Valendrew">github.com/Valendrew</a></p>
+<p class="contact">Bologna, Italy<br><a href="https://www.linkedin.com/in/andrea-valente0">linkedin.com/in/andrea-valente0</a> · <a href="https://github.com/Valendrew">github.com/Valendrew</a> · <a href="https://t.me/Valendrew">Telegram @Valendrew</a></p>
+<p class="meta updated">Updated <time datetime="2026-10-03">3 October 2026</time></p>
 </header>
 <section>
 <h2>Summary</h2>
@@ -29,7 +31,7 @@
 <h4>AI Computer Vision Engineer</h4>
 <p class="meta">Apr 2024 - Aug 2026</p>
 <p class="cv-project"><strong>Automated package-seal inspection</strong> | global packaging manufacturer</p>
-<ul><li>Worked with the client’s sealing specialists, including on site, to turn how they judge torn package seals by hand into an interpretable inspection: physical force features, statistics of normal samples and computer vision (U-Net detection with RANSAC geometric fitting), combined so each covers cases the others miss while every result stays explainable. Adapted to three packaging materials, it matched or outperformed every specialist in the client’s accuracy comparison.</li>
+<ul><li>Built from scratch an interpretable seal inspection with the client’s sealing specialists, including on site, turning how they judge torn seals by hand into physical force features and normal-sample statistics, with computer vision (U-Net detection with RANSAC geometric fitting) added where force alone could not tell a defect from a test-preparation error. Adapted to three packaging materials, it matched or outperformed every specialist in the client’s accuracy comparison.</li>
 <li>A critical seal defect was too rare to collect and could not be produced physically, so built a synthetic-data pipeline that turned a handful of annotated real images into thousands of realistic training images (thin-plate-spline warping) for a U-Net detector.</li>
 <li>Built the dashboard the client’s sealing R&amp;D team adopted as a working tool on new samples: training and evaluation jobs on a GPU queue, and each score shown beside its image overlays and force plots, so the specialists could see why a package failed and find pipeline problems themselves.</li>
 </ul>

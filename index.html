@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Andrea Valente, AI Computer Vision Engineer. Selected public projects, professional experience and CV."><title>Andrea Valente | Computer Vision & Applied ML</title><link rel="stylesheet" href="styles.css"><script src="theme.js"></script>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Andrea Valente, AI Computer Vision Engineer. Selected public projects, professional experience and CV."><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><title>Andrea Valente | Computer Vision & Applied ML</title><link rel="stylesheet" href="styles.css"><script src="theme.js"></script>
 <meta property="og:title" content="Andrea Valente | Portfolio">
 <meta property="og:description" content="Computer vision and applied ML: selected projects, experience and CV.">
 <meta property="og:type" content="website">
@@ -9,16 +9,39 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:alt" content="Andrea Valente | Portfolio: Computer Vision &amp; Applied ML">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Andrea Valente","jobTitle":"AI Computer Vision Engineer","url":"https://valendrew.github.io/","address":{"@type":"PostalAddress","addressLocality":"Bologna","addressCountry":"IT"},"sameAs":["https://www.linkedin.com/in/andrea-valente0","https://github.com/Valendrew","https://t.me/Valendrew"]}</script>
 </head>
-<body><a class="skip" href="#main">Skip to content</a><div class="toolbar theme-toolbar"><button class="theme-toggle" type="button" aria-pressed="false" hidden>Dark mode</button></div><main id="main">
+<body><a class="skip" href="#main">Skip to content</a><div class="toolbar theme-toolbar"><button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode" title="Dark mode" hidden><svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg></button></div><main id="main">
 <header>
 <p class="eyebrow">Computer vision · Applied ML</p>
 <h1>Andrea Valente</h1>
 <p class="role">AI Computer Vision Engineer</p>
 <p class="intro">I work across model development, geometric vision and inference systems, building evaluation pipelines and practical tools that turn research findings into client decisions and operational R&amp;D workflows.</p>
 <nav class="links" aria-label="Profile links">
-<a class="button" href="cv/">Read CV</a><a href="https://github.com/Valendrew">GitHub</a><a href="https://www.linkedin.com/in/andrea-valente0">LinkedIn</a></nav>
+<a class="button" href="cv/">Read CV</a><a href="https://github.com/Valendrew">GitHub</a><a href="https://www.linkedin.com/in/andrea-valente0">LinkedIn</a><a href="https://t.me/Valendrew">Telegram</a></nav>
 </header>
+<section aria-labelledby="work">
+<h2 id="work">Professional work</h2>
+<article class="project">
+<p class="meta">Deep Vision Consulting · global packaging manufacturer</p>
+<h3>Automated package-seal inspection</h3>
+<ul class="tags" aria-label="Project technologies and methods"><li>Force analysis</li><li>U-Net</li><li>RANSAC</li><li>Synthetic data</li></ul>
+<p>Built from scratch an interpretable seal inspection with the client’s sealing specialists: physical force features and normal-sample statistics, with computer vision added where force alone could not tell a defect from a test-preparation error. Adapted to three packaging materials, it matched or outperformed every specialist in the client’s accuracy comparison. A synthetic-data pipeline made a defect too rare to collect trainable, and the client’s sealing R&amp;D team adopted the dashboard as a working tool on new samples.</p></article>
+
+<article class="project">
+<p class="meta">Deep Vision Consulting · global luxury eyewear group</p>
+<h3>3D face measurement from a single image</h3>
+<ul class="tags" aria-label="Project technologies and methods"><li>3D morphable models</li><li>Benchmarking</li><li>Synthetic data</li></ul>
+<p>Built the client’s first quantitative benchmark for 3D face reconstruction, trained the reconstruction network on synthetic renders, and designed the protocol for a multi-device dataset with an analysis tool the client used to explore accuracy. The results showed single-image 3D was too ill-posed for the product, and the try-on kept its head-pose approach.</p></article>
+
+<article class="project">
+<p class="meta">Deep Vision Consulting · global luxury eyewear group</p>
+<h3>Head-pose model and in-browser inference for virtual try-on</h3>
+<ul class="tags" aria-label="Project technologies and methods"><li>6DoF head pose</li><li>ONNX Runtime</li><li>WebGPU</li><li>WebAssembly</li></ul>
+<p>Designed and trained a compact head-pose network that became the client’s default backbone at a quarter of the reference model’s size. Ported the browser inference library to ONNX Runtime WebGPU: it became the intended runtime of the pre-production try-on and was faster in the client’s benchmark across low- to high-end phones.</p></article>
+
+<a href="cv/">Full experience in the CV →</a></section>
+
 <section aria-labelledby="projects">
 <h2 id="projects">Selected public projects</h2>
 <article class="project">
