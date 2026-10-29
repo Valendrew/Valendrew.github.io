@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Andrea Valente, AI Computer Vision Engineer. Selected public projects."><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><title>Andrea Valente | Computer Vision & Applied ML</title><link rel="stylesheet" href="styles.css"><script src="theme.js"></script>
+<meta property="og:title" content="Andrea Valente | Portfolio">
+<meta property="og:description" content="Computer vision and applied ML: selected projects.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://valendrew.github.io/">
+<meta property="og:image" content="https://valendrew.github.io/assets/portfolio-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Andrea Valente | Portfolio: Computer Vision &amp; Applied ML">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Andrea Valente","jobTitle":"AI Computer Vision Engineer","url":"https://valendrew.github.io/","address":{"@type":"PostalAddress","addressLocality":"Bologna","addressCountry":"IT"},"sameAs":["https://www.linkedin.com/in/andrea-valente0","https://github.com/Valendrew","https://t.me/Valendrew"]}</script>
+</head>
+<body><a class="skip" href="#main">Skip to content</a><div class="toolbar theme-toolbar"><button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode" title="Dark mode" hidden><svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/></svg></button></div><main id="main">
+<header>
+<p class="eyebrow">Computer vision · Applied ML</p>
+<h1>Andrea Valente</h1>
+<p class="role">AI Computer Vision Engineer</p>
+<p class="intro">I work across model development, geometric vision and inference systems, building evaluation pipelines and practical tools for applied ML and operational R&amp;D workflows.</p>
+<nav class="links" aria-label="Profile links">
+<a class="button" href="https://www.linkedin.com/in/andrea-valente0">CV by request</a><a href="https://github.com/Valendrew">GitHub</a><a href="https://www.linkedin.com/in/andrea-valente0">LinkedIn</a><a href="https://t.me/Valendrew">Telegram</a></nav>
+</header>
+<section aria-labelledby="projects">
+<h2 id="projects">Selected public projects</h2>
+<article class="project">
+<p class="meta">MSc project</p>
+<h3>Counterfactual explanations</h3>
+<ul class="tags" aria-label="Project technologies and methods"><li>Python</li><li>PyTorch</li><li>OMLT</li><li>Pyomo</li><li>CPLEX</li><li>DiCE</li></ul>
+<p>What would a phone need to change for a price classifier to put it in another price range? The project encodes a PyTorch classifier as mixed-integer constraints (OMLT, Pyomo, CPLEX) and compares the resulting counterfactual explanations with DiCE's genetic search on validity, sparsity and realism. An interactive demo (FastAPI, Vue) shows which features change.</p>
+<div class="links"><a href="https://github.com/Valendrew/counterfactual-explanations">Repository</a> <a href="https://github.com/Valendrew/counterfactual-demo">Demo repository</a></div></article>
+
+<article class="project">
+<p class="meta">MSc project</p>
+<h3>Rectangular circuit placement (VLSI)</h3>
+<ul class="tags" aria-label="Project technologies and methods"><li>Python</li><li>MiniZinc</li><li>Constraint programming</li><li>SMT</li><li>MIP</li><li>Strip packing</li></ul>
+<p>Places rectangular circuits on a plate of fixed width without overlaps, keeping the plate as short as possible. The same problem is modelled in constraint programming (MiniZinc), SMT (Z3, CVC4) and mixed-integer programming (PuLP, CPLEX), with a shared Python harness that compares them on 40 instances.</p>
+<div class="links"><a href="https://github.com/Valendrew/vlsi-design">Repository</a></div></article>
+
+<article class="project">
+<p class="meta">MSc project</p>
+<h3>Comparative argument retrieval</h3>
+<ul class="tags" aria-label="Project technologies and methods"><li>Python</li><li>Pyserini</li><li>FAISS</li><li>MonoT5</li><li>DistilBERT</li></ul>
+<p>Finds passages that answer comparative questions ("is X better than Y?") and classifies their stance. Compares keyword, dense, hybrid and MonoT5-reranked search over a large passage corpus: hybrid fusion gave the best recall, neural reranking the best top-five ranking.</p>
+<div class="links"><a href="https://github.com/Valendrew/argument-retrieval-comparative-questions">Repository</a></div></article>
+
+<article class="project">
+<p class="meta">Personal project</p>
+<h3>Video context pipeline</h3>
+<ul class="tags" aria-label="Project technologies and methods"><li>Python</li><li>Pydantic</li><li>HTTPX</li><li>Async</li><li>Dependency planning</li></ul>
+<p>A Python library that turns a video link into a transcript, a visual description, metadata and media, so an application can use videos without handling the downloading and processing itself. Steps run in dependency order with bounded retries and cleanup, and a local browser builder shows each pipeline and exports its configuration.</p>
+<div class="links"><a href="https://github.com/Valendrew/video-context-pipeline">Repository</a></div></article>
+
+<a href="https://github.com/Valendrew?tab=repositories">All public repositories →</a></section>
+</main>
+<footer>
+Bologna, Italy</footer>
+</body></html>
